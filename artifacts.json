@@ -1,1 +1,1 @@
-{"builds":[{"imageName":"skaffold-buildpacks","tag":"gcr.io/drvaya-blog-244909/skaffold-buildpacks/skaffold-buildpacks:b7dc78c54be95a60fe1e5cb69ecfcf5d7a8b8830"}]}
+{"builds":[{"imageName":"skaffold-buildpacks","tag":"gcr.io/drvaya-blog-244909/github.com/drvaya-learn/clouddeploy-demo:b7dc78c54be95a60fe1e5cb69ecfcf5d7a8b8830"}]}
