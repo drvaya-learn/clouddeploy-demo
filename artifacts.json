@@ -1,0 +1,1 @@
+{"builds":[{"imageName":"skaffold-buildpacks","tag":"gcr.io/lswoo-int-210304/skaffold-buildpacks/skaffold-buildpacks:398e2d5-dirty@sha256:9c752e2c1d88b7ca0d27517b9243f962a9ee54234d8219679307c8aaeea67a72"}]}

@@ -1,0 +1,11 @@
+apiVersion: skaffold/v2beta15
+kind: Config
+build:
+  googleCloudBuild: #Googlecloudbuil
+    projectId: drvaya-blog-244909 #projectId 
+  artifacts: 
+  - image: skaffold-buildpacks # build
+    buildpacks: # Buildpack
+      builder: "gcr.io/buildpacks/builder:v1" #Buildpack
+
+    

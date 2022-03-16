@@ -1,0 +1,56 @@
+apiVersion: deploy.cloud.google.com/v1beta1
+kind: DeliveryPipeline
+metadata:
+  name: cloud-deploy-test
+description: Cloud deploy Demo Delivery pipeline
+serialPipeline:
+ stages:
+ - targetId: dev
+ - targetId: qa
+ - targetId: stage
+ - targetId: prod
+
+---
+
+apiVersion: deploy.cloud.google.com/v1beta1
+kind: Target
+metadata:
+  name: dev
+description: dev cluster
+requireApproval: true
+gke:
+  cluster: projects/drvaya-blog-244909/locations/us-central1-c/clusters/cluster-dev
+
+---
+
+apiVersion: deploy.cloud.google.com/v1beta1
+kind: Target
+metadata:
+  name: prod
+description: prod cluster
+requireApproval: true
+gke:
+  cluster: projects/drvaya-blog-244909/locations/us-central1-c/clusters/cluster-prod
+
+---
+
+apiVersion: deploy.cloud.google.com/v1beta1
+kind: Target
+metadata:
+  name: qa
+description: qa cluster
+requireApproval: true
+gke:
+  cluster: projects/drvaya-blog-244909/locations/us-central1-c/clusters/cluster-qa
+
+---
+
+apiVersion: deploy.cloud.google.com/v1beta1
+kind: Target
+metadata:
+  name: stage
+description: stage cluster
+requireApproval: true
+gke:
+  cluster: projects/drvaya-blog-244909/locations/us-central1-c/clusters/cluster-stage
+
