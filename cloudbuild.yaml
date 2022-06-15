@@ -1,10 +1,12 @@
 steps:
-- name: gcr.io/k8s-skaffold/skaffold
+- id: 'Deploy application to cluster'
+  name: 'gcr.io/k8s-skaffold/skaffold:v0.20.0'
+  entrypoint: 'bash'
   args:
-    - skaffold
-    - build
-    - '--interactive=false'
-    - '--file-output=/workspace/artifacts.json'
+  - '-c'
+  - >
+    skaffold run -f=skaffold.yaml --default-repo=gcr.io/$PROJECT_ID;
+    skaffold build --interactive=false --file-output=artifacts.json  
 - name: gcr.io/google.com/cloudsdktool/cloud-sdk
   entrypoint: gcloud
   args:
@@ -13,5 +15,5 @@ steps:
       "--delivery-pipeline", "cloud-deploy-test",
       "--region", "us-central1",
       "--annotations", "commitId=${REVISION_ID}",
-      "--build-artifacts", "/workspace/artifacts.json"
+      "--build-artifacts", "artifacts.json"
     ]
