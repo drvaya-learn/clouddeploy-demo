@@ -13,8 +13,7 @@ steps:
     - -c
     - |
       # Save a value to persistent volume mount: "/workspace"
-      apt-get install -y gettext-base
-      envsubst '$COMMIT_SHA' < deployment.yaml > k8s/web.yaml
+      sed -e 's/$COMMIT_SHA/'"$COMMIT_SHA"'/g' deployment.yaml > k8s/web.yaml
       # Save another
 # Create release in Google Cloud Deploy
 - name: gcr.io/google.com/cloudsdktool/cloud-sdk
