@@ -13,7 +13,7 @@ steps:
     - -c
     - |
       # Save a value to persistent volume mount: "/workspace"
-      envsubst '$COMMIT_SHA' < deployment.yaml > workspace/k8s/web.yaml
+      envsubst '$COMMIT_SHA' < deployment.yaml > k8s/web.yaml
       # Save another
 # Create release in Google Cloud Deploy
 - name: gcr.io/google.com/cloudsdktool/cloud-sdk
