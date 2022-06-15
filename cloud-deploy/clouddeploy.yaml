@@ -17,7 +17,6 @@ kind: Target
 metadata:
   name: dev
 description: dev cluster
-requireApproval: false
 gke:
   cluster: projects/drvaya-blog-244909/locations/us-central1-c/clusters/cluster-dev
 
