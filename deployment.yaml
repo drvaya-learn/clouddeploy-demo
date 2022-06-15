@@ -1,0 +1,1 @@
+  - image: gcr.io/drvaya-blog-244909/github.com/drvaya-learn/clouddeploy-demo:${COMMIT_SHA}
