@@ -1,3 +1,3 @@
-### cloud-deploy-test
 
-# Demo on GKE
+# Demo on GKE using Cloud Deploy
+### cloud-deploy-test
