@@ -5,3 +5,5 @@ gcloud beta container clusters create cluster-dev --zone us-central1-c --project
 
 
 gcloud beta deploy releases create test-release-rel-$(date +%y%m%d-%s) --project=drvaya-blog-244909  --region=us-central1 --delivery-pipeline=cloud-deploy-test --build-artifacts=artifacts.json
+
+Solve Dynamic Commit-SHA, CrashLoopBackOff
