@@ -5,6 +5,14 @@ steps:
 # Push the container image
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/$PROJECT_ID/github.com/drvaya-learn/clouddeploy-demo:${COMMIT_SHA}']
+# Dynamic Commit-Sha replace
+- id: "Store Values"
+  name: ubuntu
+  entrypoint: bash
+  args:
+    - -c
+    - |
+    sed -e 's/$COMMIT_SHA/'"$COMMIT_SHA"'/g' deployment.yaml > /workspace/k8s/web.yaml
 # Create release in Google Cloud Deploy
 - name: gcr.io/google.com/cloudsdktool/cloud-sdk
   entrypoint: gcloud
