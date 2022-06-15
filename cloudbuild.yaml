@@ -6,7 +6,6 @@ steps:
   - '-c'
   - >
     skaffold run -f=skaffold.yaml --default-repo=gcr.io/$PROJECT_ID;
-    skaffold build --interactive=false --file-output=artifacts.json  
 - name: gcr.io/google.com/cloudsdktool/cloud-sdk
   entrypoint: gcloud
   args:
