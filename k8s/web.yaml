@@ -25,6 +25,6 @@ spec:
     spec:
       containers:
       - name: web
-        image: gcr.io/drvaya-blog-244909/github.com/drvaya-learn/clouddeploy-demo:${COMMIT_SHA} #img
+        image: WEB_APP_IMAGE_NAME #img
         ports:
           - containerPort: 8080
